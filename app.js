@@ -2,21 +2,30 @@ const translate = document.querySelectorAll(".translate");
 const big_title = document.querySelector(".big-title");
 const header = document.querySelector("header");
 const shadow = document.querySelector(".shadow");
-const sections = document.querySelectorAll("section"); // Get all sections
-const contents = document.querySelectorAll(".content"); // Get all content elements
-const image_containers = document.querySelectorAll(".imgContainer"); // Get all image containers
+const sections = document.querySelectorAll("section"); 
+const contents = document.querySelectorAll(".content"); 
+const image_containers = document.querySelectorAll(".imgContainer");
 const opacityElements = document.querySelectorAll(".opacity");
-const borders = document.querySelectorAll(".border"); // Get all section borders
+const borders = document.querySelectorAll(".border");
 
 let header_height = header.offsetHeight;
+
+// Get Contact Section to Stop Parallax Effect
+const contactSection = document.querySelector(".contact-section");
+let contactY = contactSection.offsetTop;
 
 window.addEventListener("scroll", () => {
     let scroll = window.pageYOffset;
 
-    // Parallax effect for images and title
+    // Stop parallax effect when reaching Contact Section
     translate.forEach(element => {
         let speed = element.dataset.speed;
-        element.style.transform = `translateY(${scroll * speed}px)`;
+        
+        if (scroll < contactY - window.innerHeight / 2) {
+            element.style.transform = `translateY(${scroll * speed}px)`;
+        } else {
+            element.style.transform = `translateY(${(contactY - window.innerHeight / 2) * speed}px)`;
+        }
     });
 
     big_title.style.opacity = -scroll / (header_height / 2) + 1;
@@ -33,14 +42,26 @@ window.addEventListener("scroll", () => {
         });
 
         // Apply floating animation to text and images in each section
-        if (contents[index] && image_containers[index]) {
-            contents[index].style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
-            image_containers[index].style.transform = `translateY(${scroll / (section_height + sectionY.top) * -50 + 50}px)`;
-        }
+        if (scroll < contactY - window.innerHeight / 2) {
+            if (contents[index] && image_containers[index]) {
+                contents[index].style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
+                image_containers[index].style.transform = `translateY(${scroll / (section_height + sectionY.top) * -50 + 50}px)`;
+            }
 
-        // Expand border animation for all sections
-        if (borders[index]) {
-            borders[index].style.width = `${scroll / (sectionY.top + section_height) * 30}%`;
+            // Expand border animation for all sections
+            if (borders[index]) {
+                borders[index].style.width = `${scroll / (sectionY.top + section_height) * 30}%`;
+            }
+        } else {
+            // Stop transformations beyond Contact Us
+            if (contents[index] && image_containers[index]) {
+                contents[index].style.transform = `translateY(0px)`;
+                image_containers[index].style.transform = `translateY(0px)`;
+            }
+
+            if (borders[index]) {
+                borders[index].style.width = `30%`; // Keep it at a fixed width
+            }
         }
     });
 });

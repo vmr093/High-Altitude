@@ -29,6 +29,12 @@ header {
     height: 20vh;  /* Prevents the large gray block */
 }
 
+/* ✅ Fix header height issue in Contact Page */
+.contact-page header {
+    height: auto;
+    padding: 20px 0;
+}
+
 /* Restore mountain, person, and sky images */
 .mountain1 {
     position: absolute;
@@ -88,6 +94,14 @@ header {
     margin-top: 20px;
     font-size: 2.5rem;
     color: #151515;
+}
+
+/* ✅ Fix the title size & position in Contact Page */
+.contact-section .big-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #151515;
+    margin-bottom: 20px;
 }
 
 /* Sections */
@@ -163,8 +177,6 @@ section .container > * {
 .opacity {
     opacity: 0;
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 850px) {
@@ -256,6 +268,49 @@ section .container > * {
     transform: scale(1.05);
 }
 
+/* Contact Form */
+.contact-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-section form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-section label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #cc4628;
+}
+
+/* Footer */
 .footer {
     background-color: #151515;
     color: #fff;
@@ -295,28 +350,20 @@ section .container > * {
     color: #E6B800; /* Slightly darker gold */
 }
 
-/* Ensure sections stretch full width */
-section {
-    width: 100%;
-    display: block;
+.shop-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background-color: #ffcc00; /* Bright button for contrast */
+    color: #151515;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Ensure images inside sections are full width */
-section img {
-    display: block;
-    width: 100%;
-}
-
-/* Fix margin or padding causing white gaps */
-section.dark-section,
-section.light-section {
-    margin: 0;
-    padding: 0;
-}
-.dark-section,
-.light-section {
-    width: 100%;
-    min-height: 100vh; /* Ensure full screen */
-    background-size: cover;
-    background-position: center;
+.shop-button:hover {
+    background-color: #e6b800; /* Slightly darker on hover */
+    transform: scale(1.05);
 }
