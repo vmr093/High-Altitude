@@ -45,7 +45,7 @@ High-Altitude-Photography/ │── img/ # Images & assets
 ### **Option 1: Run Locally with a Live Server (Easiest)**
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/vmr093/ParallaxPractice.git
+   git clone https://github.com/vmr093/High-Altitude.git
 
 Open the project in VS Code.
 Install Live Server extension in VS Code.
