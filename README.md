@@ -2,7 +2,13 @@
 
 *A parallax scrolling photography website showcasing breathtaking mountain prints for sale.*
 
-![High Altitude Preview](img/preview.png) <!-- Replace with an actual screenshot of your site -->
+<img width="1165" alt="Screenshot 2025-03-01 at 12 30 41 PM" src="https://github.com/user-attachments/assets/dbd71242-cdb0-46a7-a677-aa5b6c3e9fcd" />
+
+<img width="1120" alt="Screenshot 2025-03-01 at 12 30 55 PM" src="https://github.com/user-attachments/assets/97cac319-c39d-4601-bdec-47e14e5d053c" />
+
+<img width="1127" alt="Screenshot 2025-03-01 at 12 31 07 PM" src="https://github.com/user-attachments/assets/9db84973-2574-4a2c-b713-50ac5c2bb07e" />
+
+<img width="1112" alt="Screenshot 2025-03-01 at 12 31 20 PM" src="https://github.com/user-attachments/assets/02bfd8f6-6edb-4029-90bb-3e9edcfb58f2" />
 
 ---
 
