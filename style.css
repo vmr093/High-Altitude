@@ -16,6 +16,7 @@ body {
     margin: 0 auto;
 }
 
+/* ✅ Keep header height unchanged for index.html */
 header {
     width: 100%;
     height: 100vh;
@@ -23,15 +24,9 @@ header {
     overflow: hidden;
 }
 
-header:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.05);
-    z-index: 25;
+/* ✅ Reduce header height ONLY for gallery.html */
+.gallery-page header {
+    height: 20vh;  /* Prevents the large gray block */
 }
 
 /* Restore mountain, person, and sky images */
@@ -85,6 +80,14 @@ header:after {
     font-size: 5rem;
     font-weight: 600;
     color: #fff;
+}
+
+/* ✅ Ensure the title is positioned correctly in gallery.html */
+.gallery-page .big-title {
+    position: static;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #151515;
 }
 
 /* Sections */
@@ -161,6 +164,26 @@ section .container > * {
     opacity: 0;
 }
 
+/* Shop Prints Button */
+.shop-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background-color: #FFD700; /* Gold color */
+    color: #151515; /* Dark text for contrast */
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.shop-button:hover {
+    background-color: #E6B800; /* Slightly darker gold on hover */
+    transform: scale(1.05);
+}
+
+
 /* Responsive Design */
 @media (max-width: 850px) {
     section .container {
@@ -180,4 +203,73 @@ section .container > * {
     .title {
         font-size: 1.2rem;
     }
+}
+
+/* ✅ Ensure the Back Button is properly spaced */
+.back-container {
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* ✅ Remove extra space above the gallery */
+.gallery {
+    margin-top: 0 !important;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Buy Button */
+.buy-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #cc4628;
+    transform: scale(1.05);
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #151515;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
 }
