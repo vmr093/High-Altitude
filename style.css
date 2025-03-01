@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
 }
 
-.container{
+.container {
     max-width: 70rem;
     padding: 0 2rem;
     margin: 0 auto;
 }
 
-header{
+header {
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
-header:after{
+header:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -34,7 +34,8 @@ header:after{
     z-index: 25;
 }
 
-.mountain1{
+/* Restore mountain, person, and sky images */
+.mountain1 {
     position: absolute;
     bottom: -100px;
     width: 1500px;
@@ -42,7 +43,7 @@ header:after{
     z-index: 19;
 }
 
-.person{
+.person {
     position: absolute;
     width: 650px;
     bottom: -100px;
@@ -50,7 +51,7 @@ header:after{
     z-index: 20;
 }
 
-.mountain2{
+.mountain2 {
     position: absolute;
     width: 1100px;
     bottom: -100px;
@@ -58,7 +59,7 @@ header:after{
     z-index: 18;
 }
 
-.mountain3{
+.mountain3 {
     position: absolute;
     width: 900px;
     bottom: 150px;
@@ -66,77 +67,15 @@ header:after{
     z-index: 17;
 }
 
-.sky{
+.sky {
     position: absolute;
     width: 2100px;
     bottom: 250px;
     right: 0;
 }
 
-nav{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    z-index: 30;
-    background: linear-gradient(to bottom, rgba( 0, 0, 0, 0.05), transparent)
-}
-
-nav .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo{
-    color: #fff;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-.logo span{
-    font-weight: 300;
-}
-
-.hamburger-menu{
-    width: 1.55rem;
-    height: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.bar{
-    position: relative;
-    width: 1.2rem; 
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-}
-
-.bar:before, .bar:after{
-    content: '';
-    position: absolute;
-    width: 1.55rem;
-    height: 3px;
-    right: 0;
-    background-color: #fff;
-    border-radius: 2px;
-}
-
-.bar:before{
-    transform: translateY(-8px);
-}
-
-.bar:after{
-    transform: translateY(8px);
-}
-
-.big-title{
+/* Restore Big Title */
+.big-title {
     position: absolute;
     z-index: 30;
     line-height: 4rem;
@@ -148,13 +87,25 @@ nav .container{
     color: #fff;
 }
 
-section{
+/* Sections */
+section {
     width: 100%;
-    background-color: #151515;
     position: relative;
 }
 
-section .container{
+/* Dark Background Section */
+.dark-section {
+    background-color: #151515;
+    color: #fff;
+}
+
+/* Light Background Section */
+.light-section {
+    background-color: #fff;
+    color: #000;
+}
+
+section .container {
     padding: 3rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -163,24 +114,23 @@ section .container{
     min-height: 100vh;
 }
 
-section img{
+section img {
     width: 100%;
 }
 
-section .container > *{
+section .container > * {
     margin: 2rem;
 }
 
-.content{
-    color: #fff;
+.content {
     transform: translateY(-50px);
 }
 
-.imgContainer{
+.imgContainer {
     transform: translateY(50px);
 }
 
-.title{
+.title {
     font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -188,16 +138,16 @@ section .container > *{
     position: relative;
 }
 
-.border{
+.border {
     position: absolute;
     width: 0%;
     height: 3px;
-    background-color: #fff;
+    background-color: currentColor;
     bottom: 0;
     left: 0;
 }
 
-.shadow{
+.shadow {
     position: absolute;
     bottom: 100%;
     height: 300px;
@@ -207,26 +157,27 @@ section .container > *{
     background: linear-gradient(to top, #151515, transparent);
 }
 
-.opacity{
+.opacity {
     opacity: 0;
 }
 
-@media (max-width: 850px){
-    section .container{
+/* Responsive Design */
+@media (max-width: 850px) {
+    section .container {
         grid-template-columns: 1fr;
     }
 }
 
-@media(max-width: 600px){
-    .big-title{
-        font-size: 3rem
+@media(max-width: 600px) {
+    .big-title {
+        font-size: 3rem;
     }
 
-    .text{
+    .text {
         font-size: .8rem;
     }
 
-    .title{
+    .title {
         font-size: 1.2rem;
     }
 }
